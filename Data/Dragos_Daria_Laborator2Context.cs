@@ -16,5 +16,6 @@ namespace Dragos_Daria_Laborator2.Data
 
         public DbSet<Dragos_Daria_Laborator2.Models.Book> Book { get; set; } = default!;
         public DbSet<Dragos_Daria_Laborator2.Models.Publisher> Publisher { get; set; } = default!;
+        public DbSet<Dragos_Daria_Laborator2.Models.Category> Category { get; set; } = default!;
     }
 }
