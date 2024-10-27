@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:Dragos_Daria_Laborator2Context"
+    }
+  }
+}
