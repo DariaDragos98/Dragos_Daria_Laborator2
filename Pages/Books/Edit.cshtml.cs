@@ -42,13 +42,8 @@ namespace Dragos_Daria_Laborator2.Pages.Books
                 return NotFound();
             }
             PopulateAssignedCategoryData(_context, Book);
-            var authorList = _context.Author.Select(x => new
-            {
-                x.ID,
-                FullName = x.LastName + " " + x.FirstName
-            });
-            ViewData["AuthorID"] = new SelectList(authorList, "ID", "FullName");
 
+            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "FullName");
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
 
             return Page();

@@ -4,6 +4,7 @@ using Dragos_Daria_Laborator2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dragos_Daria_Laborator2.Migrations
 {
     [DbContext(typeof(Dragos_Daria_Laborator2Context))]
-    partial class Dragos_Daria_Laborator2ContextModelSnapshot : ModelSnapshot
+    [Migration("20241030181209_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,11 +27,11 @@ namespace Dragos_Daria_Laborator2.Migrations
 
             modelBuilder.Entity("Dragos_Daria_Laborator2.Models.Author", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("AuthorID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuthorID"));
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -38,7 +41,7 @@ namespace Dragos_Daria_Laborator2.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("AuthorID");
 
                     b.ToTable("Author");
                 });
